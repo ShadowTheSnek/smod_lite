@@ -4,7 +4,7 @@ if dopalette
 	if ps == 12
 		pattern_draw(sprite_index, image_index, x, y, obj_player.pattern_spr, 1, 1, 0, c_white, 1)
 
-	pal_swap_set(pal_peppino, ps, false)
+	pal_swap_set(global.sprite_player_palette, ps, false)
 	draw_self()
 	pal_swap_reset()
 }

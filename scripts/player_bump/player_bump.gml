@@ -1,9 +1,9 @@
 function player_bump() 
 {
 	image_speed = 0.35
-	if sprite_index == spr_player_wallsplat || 
-	   sprite_index == spr_player_ceilinghit || 
-	   sprite_index == spr_player_bodyslamland ||
+	if sprite_index == global.sprite_player_wallsplat || 
+	   sprite_index == global.sprite_player_ceilinghit || 
+	   sprite_index == global.sprite_player_bodyslamland ||
 	   sprite_index == spr_player_poundcancel2 ||
 	   sprite_index == spr_player_shotgun_shootdownland
 	{
@@ -16,14 +16,14 @@ function player_bump()
 	if anim_ended()
 	{
 		state = states.normal
-		if (sprite_index == spr_player_bodyslamland || sprite_index == spr_player_freefallland)
-			reset_anim(spr_player_facehurt)
-		else if (sprite_index == spr_player_ceilinghit)
+		if (sprite_index == global.sprite_player_bodyslamland || sprite_index == global.sprite_player_freefallland)
+			reset_anim(global.sprite_player_facehurt)
+		else if (sprite_index == global.sprite_player_ceilinghit)
 		{
-			reset_anim(spr_player_machfreefall)
+			reset_anim(global.sprite_player_machfreefall)
 			state = states.jump
 		}
 		else
-			sprite_index = spr_player_idle
+			sprite_index = global.sprite_player_idle
 	}
 }

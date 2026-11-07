@@ -84,7 +84,7 @@ function do_taunt()
 		
 		if !(input_direction_check(INPUTS.up) && supertauntshow)
 		{
-			sprite_index = spr_player_taunt
+			sprite_index = global.sprite_player_taunt
 			image_index = random_range(0, image_number)
 			taunttimer = 20
 			fmod_studio_event_instance_oneshot_3d("event:/sfx/player/taunt", x, y)
@@ -118,7 +118,7 @@ function do_taunt()
 			taunttimer = 20
 			fmod_studio_event_instance_oneshot_3d("event:/sfx/player/supertaunt", x, y)
 			tauntinv = true
-			reset_anim(asset_get_index($"spr_player_supertaunt{irandom_range(1, 4)}"))
+			reset_anim(asset_get_index($"sprite_player_supertaunt{irandom_range(1, 4)}"))
 			var spds = [[0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]]
 			var i = 0
 			var spd = 20
@@ -186,11 +186,11 @@ function player_sounds()
 		
 		var _mach_ix = 1
 		
-		if sprite_index == spr_player_crazyrun
+		if sprite_index == global.sprite_player_crazyrun
 			_mach_ix = 3
 		else if state == states.mach3
 			_mach_ix = 2
-		else if sprite_index == spr_player_mach1
+		else if sprite_index == global.sprite_player_mach1
 			_mach_ix = 0
 		
 		fmod_studio_event_instance_set_parameter_by_name(mach_snd, "mach", _mach_ix)
@@ -241,13 +241,13 @@ function do_hurt(obj = noone)
 			goto_xscale = sign(x - xh)
 		var facing = xscale == -goto_xscale
 		hsp = 8 * goto_xscale
-		sprite_index = facing ? spr_player_hurt : spr_player_hurtbehind
+		sprite_index = facing ? global.sprite_player_hurt : global.sprite_player_hurtbehind
 		
 		if (obj.object_index == obj_outlet || obj.object_index == obj_pizzardelectricity)
 			fmod_studio_event_instance_oneshot_3d("event:/sfx/misc/electricity", x, y)
 	}
 	else
-		sprite_index = spr_player_hurt
+		sprite_index = global.sprite_player_hurt
 	
 	flash = 8
 	state = states.hurt

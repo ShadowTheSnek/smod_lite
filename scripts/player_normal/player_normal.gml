@@ -1,9 +1,9 @@
 function player_normal()
 {
-	var default_idle = spr_player_idle
-	var default_move = spr_player_move
-	var default_jump = spr_player_jump
-	var default_fall = spr_player_fall
+	var default_idle = global.sprite_player_idle
+	var default_move = global.sprite_player_move
+	var default_jump = global.sprite_player_jump
+	var default_fall = global.sprite_player_fall
 	
 	if has_shotgun
 	{
@@ -72,12 +72,12 @@ function player_normal()
 	hsp = P_MOVE * movespeed
 	
 	var idlegestures = [
-		spr_player_idlefrown, 
-		spr_player_idledance, 
-		spr_player_idlehand, 
-		spr_player_idlecareless, 
-		spr_player_idlewhat,
-		spr_player_idlebite
+		global.sprite_player_idle1, 
+		global.sprite_player_idle2, 
+		global.sprite_player_idle3, 
+		global.sprite_player_idle4, 
+		global.sprite_player_idle5,
+		global.sprite_player_idle6
 	]
 	
 	if P_MOVE != 0
@@ -87,7 +87,7 @@ function player_normal()
 	{
 		if P_MOVE != 0
 		{
-			if (sprite_index != spr_player_landmove && sprite_index != spr_player_shotgun_land)
+			if (sprite_index != global.sprite_player_landmove && sprite_index != spr_player_shotgun_land)
 				sprite_index = default_move
 		}
 		else
@@ -109,7 +109,7 @@ function player_normal()
 				}
 			}
 			
-			if (sprite_index != spr_player_machslideend && sprite_index != spr_player_land && sprite_index != spr_player_bodyslamland && sprite_index != spr_player_facehurt && sprite_index != spr_player_shotgun_land && idletimer > 0)
+			if (sprite_index != global.sprite_player_machslideend && sprite_index != global.sprite_player_land && sprite_index != spr_player_bodyslamland && sprite_index != spr_player_facehurt && sprite_index != spr_player_shotgun_land && idletimer > 0)
 				sprite_index = default_idle
 		}
 	}
@@ -150,7 +150,7 @@ function player_normal()
 	
 	if (input_direction_check(INPUTS.down) || !scr_can_uncrouch())
 	{
-		reset_anim(!has_shotgun ? spr_player_crouchdown : spr_player_shotgun_crouchstart)
+		reset_anim(!has_shotgun ? global.sprite_player_crouchdown : spr_player_shotgun_crouchstart)
 		state = states.crouch
 	}
 	
@@ -179,7 +179,7 @@ function player_normal()
 		state = states.mach2
 		if (movespeed < 6)
 			movespeed = 6
-		reset_anim(spr_player_mach1)
+		reset_anim(global.sprite_player_mach1)
 	}
 	
 	if global.combo.count >= 25 && !particle_contains_sprite(spr_angrycloud)
@@ -187,20 +187,20 @@ function player_normal()
 	
 	switch (sprite_index)
 	{
-		case spr_player_move:
+		case global.sprite_player_move:
 		case spr_player_hurtmove:
 		case spr_player_madmove:
 		case spr_player_ragemove:
 			if movespeed > 3
 				image_speed = (movespeed < 6) ? 0.45 : 0.6
 			break;
-		case spr_player_machslideend:
-		case spr_player_land:
+		case global.sprite_player_machslideend:
+		case global.sprite_player_land:
 		case spr_player_shotgun_land:
 		case spr_player_facehurt:
 			reset_anim_on_end(default_idle)
 			break;
-		case spr_player_landmove:
+		case global.sprite_player_landmove:
 			reset_anim_on_end(default_move);
 			if movespeed > 3
 				image_speed = (movespeed < 6) ? 0.45 : 0.6

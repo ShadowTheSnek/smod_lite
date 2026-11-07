@@ -65,7 +65,7 @@ function do_vulnerability()
 			with (obj_player)
 			{
 				if (state == states.mach3)
-					reset_anim(spr_player_mach3hit)
+					reset_anim(global.sprite_player_mach3hit)
 				if (input_check(INPUTS.jump) && state != states.groundpound)
 				{
 					vsp = -10

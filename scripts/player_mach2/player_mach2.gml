@@ -4,8 +4,8 @@ function player_mach2()
 	
 	if (grounded && vsp >= 0)
 	{
-		if (sprite_index != spr_player_mach1 && sprite_index != spr_player_rollgetup)
-			sprite_index = spr_player_mach2
+		if (sprite_index != global.sprite_player_mach1 && sprite_index != global.sprite_player_rollgetup)
+			sprite_index = global.sprite_player_mach2
 		if (!input_check(INPUTS.dash))
 		{
 			if (movespeed < 8)
@@ -15,7 +15,7 @@ function player_mach2()
 			}
 			else
 			{
-				reset_anim(spr_player_machslidestart)
+				reset_anim(global.sprite_player_machslidestart)
 				state = states.slide
 				fmod_studio_event_instance_oneshot_3d("event:/sfx/player/break", x, y)
 			}
@@ -31,15 +31,15 @@ function player_mach2()
 			{
 				state = states.slide
 				fmod_studio_event_instance_oneshot_3d("event:/sfx/player/machslideboost", x, y)
-				reset_anim(spr_player_machslideboost)
+				reset_anim(global.sprite_player_machslideboost)
 			}
 		}
 		if movespeed < 12
 			movespeed += 0.1
 		else
 		{
-			if (sprite_index != spr_player_rollgetup)
-				sprite_index = spr_player_mach3
+			if (sprite_index != global.sprite_player_rollgetup)
+				sprite_index = global.sprite_player_mach3
 			state = states.mach3
 			flash = 8
 		}
@@ -53,14 +53,14 @@ function player_mach2()
 	}
 	else
 	{
-		if (sprite_index != spr_player_secondjump && 
-			sprite_index != spr_player_secondjumploop && 
-			sprite_index != spr_player_walljumpstart && 
-			sprite_index != spr_player_walljumpend && 
-			sprite_index != spr_player_longjump &&
-			sprite_index != spr_player_longjump_loop &&
-			sprite_index != spr_player_mach2jump)
-			reset_anim(spr_player_secondjump)
+		if (sprite_index != global.sprite_player_secondjump && 
+			sprite_index != global.sprite_player_secondjumploop && 
+			sprite_index != global.sprite_player_walljumpstart && 
+			sprite_index != global.sprite_player_walljumpend && 
+			sprite_index != global.sprite_player_longjump &&
+			sprite_index != global.sprite_player_longjump_loop &&
+			sprite_index != global.sprite_player_mach2jump)
+			reset_anim(global.sprite_player_secondjump)
 		if (!jumpstop && !input_check(INPUTS.jump) && vsp < 0)
 		{
 			jumpstop = true
@@ -83,10 +83,10 @@ function player_mach2()
 	{
 		state = states.tumble
 		if (grounded)
-			reset_anim(spr_player_machroll)
+			reset_anim(global.sprite_player_machroll)
 		else
 		{
-			sprite_index = spr_player_mach2jump
+			sprite_index = global.sprite_player_mach2jump
 			vsp = 10
 		}
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
@@ -103,7 +103,7 @@ function player_mach2()
 	else if (grounded && scr_hitwall(x + xscale, y))
 	{
 		state = states.bump
-		reset_anim(spr_player_wallsplat)
+		reset_anim(global.sprite_player_wallsplat)
 		fmod_studio_event_instance_oneshot_3d("event:/sfx/player/splat", x, y)
 	}
 	
@@ -112,24 +112,24 @@ function player_mach2()
 	image_speed = abs(movespeed) / 15
 	switch (sprite_index)
 	{
-		case spr_player_mach1:
-			reset_anim_on_end(spr_player_mach2)
+		case global.sprite_player_mach1:
+			reset_anim_on_end(global.sprite_player_mach2)
 			break;
-		case spr_player_secondjump:
-			reset_anim_on_end(spr_player_secondjumploop)
+		case global.sprite_player_secondjump:
+			reset_anim_on_end(global.sprite_player_secondjumploop)
 			break;
-		case spr_player_walljumpstart:
-			reset_anim_on_end(spr_player_walljumpend)
+		case global.sprite_player_walljumpstart:
+			reset_anim_on_end(global.sprite_player_walljumpend)
 			break;
-		case spr_player_rollgetup:
+		case global.sprite_player_rollgetup:
 			image_speed = 0.4
-			reset_anim_on_end(spr_player_mach2)
+			reset_anim_on_end(global.sprite_player_mach2)
 			break;
-		case spr_player_longjump:
-		case spr_player_longjump_loop:
+		case global.sprite_player_longjump:
+		case global.sprite_player_longjump_loop:
 			image_speed = 0.4
-			if sprite_index == spr_player_longjump
-				reset_anim_on_end(spr_player_longjump_loop)
+			if sprite_index == global.sprite_player_longjump
+				reset_anim_on_end(global.sprite_player_longjump_loop)
 			break;
 	}
 	do_taunt()

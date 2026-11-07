@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Clothes",
-    "path":"folders/Sprites/Player/Clothes.yy",
+    "path":"folders/Sprites/Player/PEPPINO/Clothes.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

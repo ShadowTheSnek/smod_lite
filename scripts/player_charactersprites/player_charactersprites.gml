@@ -1,0 +1,188 @@
+function player_charactersprites(){
+
+// Essentials
+global.sprite_player_palette = pal_peppino
+global.sprite_player_idle = spr_player_idle
+global.sprite_player_idle1 = spr_player_idlebite
+global.sprite_player_idle2 = spr_player_idlecareless
+global.sprite_player_idle3 = spr_player_idledance
+global.sprite_player_idle4 = spr_player_idlefrown
+global.sprite_player_idle5 = spr_player_idlehand
+global.sprite_player_idle6 = spr_player_idlewhat
+global.sprite_player_move = spr_player_move
+global.sprite_player_jump = spr_player_jump
+global.sprite_player_fall = spr_player_fall
+global.sprite_player_fallface = spr_player_fallface
+global.sprite_player_freefall = spr_player_freefall
+global.sprite_player_freefallland = spr_player_freefallland
+global.sprite_player_land = spr_player_land
+global.sprite_player_landmove = spr_player_landmove
+global.sprite_player_hurt = spr_player_hurt
+global.sprite_player_hurtbehind = spr_player_hurtbehind
+global.sprite_player_wallsplat = spr_player_wallsplat
+global.sprite_player_ladder = spr_player_ladder
+global.sprite_player_laddermove = spr_player_laddermove
+global.sprite_player_ladderdown = spr_player_ladderdown
+// Level Essential
+global.sprite_player_walkfront = spr_player_walkfront
+global.sprite_player_timesup = spr_player_timesup
+global.sprite_player_uppizzabox = spr_player_uppizzabox
+global.sprite_player_downpizzabox = spr_player_downpizzabox
+global.sprite_player_gottreasure = spr_player_gottreasure
+global.sprite_player_dead = spr_player_dead
+global.sprite_player_entergate = spr_player_entergate
+global.sprite_player_lookdoor = spr_player_lookdoor
+global.sprite_player_enterkeydoor = spr_player_enterkeydoor
+global.sprite_player_keyget = spr_player_keyget
+// Taunt
+global.sprite_player_taunt = spr_player_taunt
+global.sprite_player_supertaunt1 = spr_player_supertaunt1
+global.sprite_player_supertaunt2 = spr_player_supertaunt2
+global.sprite_player_supertaunt3 = spr_player_supertaunt3
+global.sprite_player_supertaunt4 = spr_player_supertaunt4
+// Crouch
+global.sprite_player_crouch = spr_player_crouch
+global.sprite_player_crouchdown = spr_player_crouchdown
+global.sprite_player_crawl = spr_player_crawl
+global.sprite_player_crouchjump = spr_player_crouchjump
+global.sprite_player_crouchfall = spr_player_crouchfall
+global.sprite_player_crouchslip = spr_player_crouchslip
+// Mach
+global.sprite_player_mach1 = spr_player_mach1
+global.sprite_player_machfreefall = spr_player_machfreefall
+global.sprite_player_machroll = spr_player_machroll
+global.sprite_player_machslidestart = spr_player_machslidestart
+global.sprite_player_machslideloop = spr_player_machslide_loop
+global.sprite_player_machslideend = spr_player_machslideend
+global.sprite_player_machroll = spr_player_machroll
+global.sprite_player_rollgetup = spr_player_rollgetup
+global.sprite_player_mach2 = spr_player_mach2
+global.sprite_player_mach2jump = spr_player_mach2jump
+global.sprite_player_machslideboost = spr_player_machslideboost
+global.sprite_player_machslideboostfall = spr_player_machslideboostfall
+global.sprite_player_mach3 = spr_player_mach3
+global.sprite_player_mach3jump = spr_player_mach3jump
+global.sprite_player_mach3hit = spr_player_mach3hit
+global.sprite_player_mach3hitwall = spr_player_mach3hitwall
+global.sprite_player_machslideboost3 = spr_player_machslideboost3
+global.sprite_player_machslideboost3fall = spr_player_machslideboost3fall
+global.sprite_player_crazyrun = spr_player_crazyrun
+// Spuerjump
+global.sprite_player_superjump = spr_player_superjump
+global.sprite_player_superjumpflash = spr_player_superjumpflash
+global.sprite_player_superjumpleft = spr_player_superjumpleft
+global.sprite_player_superjumpprep = spr_player_superjumpprep
+global.sprite_player_superjumpright = spr_player_superjumpright
+global.sprite_player_superjumpcancelstart = spr_player_Sjumpcancelstart
+global.sprite_player_superjumpcancel = spr_player_Sjumpcancel
+global.sprite_player_ceilinghit = spr_player_ceilinghit
+// Currently not giving a fuck to catgorize
+global.sprite_player_secondjump = spr_player_secondjump
+global.sprite_player_secondjumploop = spr_player_secondjumploop
+global.sprite_player_walljumpstart = spr_player_walljumpstart
+global.sprite_player_walljumpend = spr_player_walljumpend
+global.sprite_player_longjump = spr_player_longjump
+global.sprite_player_longjump_loop = spr_player_longjump_loop
+global.sprite_player_bodyslamstart = spr_player_bodyslamstart
+global.sprite_player_bodyslamfall = spr_player_bodyslamfall
+global.sprite_player_bodyslamland = spr_player_bodyslamland
+global.sprite_player_climbwall = spr_player_climbwall
+global.sprite_player_clingwall = spr_player_clingwall
+global.sprite_player_facehurt = spr_player_facehurt
+global.sprite_player_defeat = spr_player_defeat
+global.sprite_player_bossdefeated = spr_player_bossdefeated
+
+if char == "N"
+
+// Essentials
+global.sprite_player_palette = pal_noise
+global.sprite_player_idle = spr_playerN_idle
+global.sprite_player_idle1 = spr_player_idlebite
+global.sprite_player_idle2 = spr_player_idlecareless
+global.sprite_player_idle3 = spr_player_idledance
+global.sprite_player_idle4 = spr_player_idlefrown
+global.sprite_player_idle5 = spr_player_idlehand
+global.sprite_player_idle6 = spr_player_idlewhat
+global.sprite_player_move = spr_player_move
+global.sprite_player_jump = spr_player_jump
+global.sprite_player_fall = spr_player_fall
+global.sprite_player_fallface = spr_player_fallface
+global.sprite_player_freefall = spr_player_freefall
+global.sprite_player_freefallland = spr_player_freefallland
+global.sprite_player_land = spr_player_land
+global.sprite_player_landmove = spr_player_landmove
+global.sprite_player_hurt = spr_player_hurt
+global.sprite_player_hurtbehind = spr_player_hurtbehind
+global.sprite_player_wallsplat = spr_player_wallsplat
+global.sprite_player_ladder = spr_player_ladder
+global.sprite_player_laddermove = spr_player_laddermove
+global.sprite_player_ladderdown = spr_player_ladderdown
+// Level Essential
+global.sprite_player_walkfront = spr_player_walkfront
+global.sprite_player_timesup = spr_player_timesup
+global.sprite_player_uppizzabox = spr_player_uppizzabox
+global.sprite_player_downpizzabox = spr_player_downpizzabox
+global.sprite_player_gottreasure = spr_player_gottreasure
+global.sprite_player_dead = spr_player_dead
+global.sprite_player_entergate = spr_player_entergate
+global.sprite_player_lookdoor = spr_player_lookdoor
+global.sprite_player_enterkeydoor = spr_player_enterkeydoor
+global.sprite_player_keyget = spr_player_keyget
+// Taunt
+global.sprite_player_taunt = spr_player_taunt
+global.sprite_player_supertaunt1 = spr_player_supertaunt1
+global.sprite_player_supertaunt2 = spr_player_supertaunt2
+global.sprite_player_supertaunt3 = spr_player_supertaunt3
+global.sprite_player_supertaunt4 = spr_player_supertaunt4
+// Crouch
+global.sprite_player_crouch = spr_player_crouch
+global.sprite_player_crouchdown = spr_player_crouchdown
+global.sprite_player_crawl = spr_player_crawl
+global.sprite_player_crouchjump = spr_player_crouchjump
+global.sprite_player_crouchfall = spr_player_crouchfall
+global.sprite_player_crouchslip = spr_player_crouchslip
+// Mach
+global.sprite_player_mach1 = spr_player_mach1
+global.sprite_player_machfreefall = spr_player_machfreefall
+global.sprite_player_machroll = spr_player_machroll
+global.sprite_player_machslidestart = spr_player_machslidestart
+global.sprite_player_machslideloop = spr_player_machslide_loop
+global.sprite_player_machslideend = spr_player_machslideend
+global.sprite_player_machroll = spr_player_machroll
+global.sprite_player_rollgetup = spr_player_rollgetup
+global.sprite_player_mach2 = spr_player_mach2
+global.sprite_player_mach2jump = spr_player_mach2jump
+global.sprite_player_machslideboost = spr_player_machslideboost
+global.sprite_player_machslideboostfall = spr_player_machslideboostfall
+global.sprite_player_mach3 = spr_player_mach3
+global.sprite_player_mach3jump = spr_player_mach3jump
+global.sprite_player_mach3hit = spr_player_mach3hit
+global.sprite_player_mach3hitwall = spr_player_mach3hitwall
+global.sprite_player_machslideboost3 = spr_player_machslideboost3
+global.sprite_player_machslideboost3fall = spr_player_machslideboost3fall
+global.sprite_player_crazyrun = spr_player_crazyrun
+// Spuerjump
+global.sprite_player_superjump = spr_player_superjump
+global.sprite_player_superjumpflash = spr_player_superjumpflash
+global.sprite_player_superjumpleft = spr_player_superjumpleft
+global.sprite_player_superjumpprep = spr_player_superjumpprep
+global.sprite_player_superjumpright = spr_player_superjumpright
+global.sprite_player_superjumpcancelstart = spr_player_Sjumpcancelstart
+global.sprite_player_superjumpcancel = spr_player_Sjumpcancel
+global.sprite_player_ceilinghit = spr_player_ceilinghit
+// Currently not giving a fuck to catgorize
+global.sprite_player_secondjump = spr_player_secondjump
+global.sprite_player_secondjumploop = spr_player_secondjumploop
+global.sprite_player_walljumpstart = spr_player_walljumpstart
+global.sprite_player_walljumpend = spr_player_walljumpend
+global.sprite_player_longjump = spr_player_longjump
+global.sprite_player_longjump_loop = spr_player_longjump_loop
+global.sprite_player_bodyslamstart = spr_player_bodyslamstart
+global.sprite_player_bodyslamfall = spr_player_bodyslamfall
+global.sprite_player_bodyslamland = spr_player_bodyslamland
+global.sprite_player_climbwall = spr_player_climbwall
+global.sprite_player_clingwall = spr_player_clingwall
+global.sprite_player_facehurt = spr_player_facehurt
+global.sprite_player_defeat = spr_player_defeat
+global.sprite_player_bossdefeated = spr_player_bossdefeated
+}

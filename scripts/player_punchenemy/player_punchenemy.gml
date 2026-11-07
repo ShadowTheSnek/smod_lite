@@ -14,7 +14,7 @@ function player_punchenemy()
 	
 	if anim_ended()
 	{
-		sprite_index = spr_player_fall
+		sprite_index = global.sprite_player_fall
 		state = states.normal
 		railmovespeed = 4
         raildir = -xscale

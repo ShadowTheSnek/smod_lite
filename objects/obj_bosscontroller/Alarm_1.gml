@@ -21,5 +21,5 @@ with obj_player
 	spawn = noone
 	state = states.actor
 	room_goto(return_location.room)
-	reset_anim(spr_player_walkfront)
+	reset_anim(global.sprite_player_walkfront)
 }

@@ -36,8 +36,8 @@ function player_groundpound()
 		particle_timer2 = 10
 	}
 	
-	if anim_ended() && sprite_index == spr_player_bodyslamstart
-		sprite_index = spr_player_bodyslamfall
+	if anim_ended() && sprite_index == global.sprite_player_bodyslamstart
+		sprite_index = global.sprite_player_bodyslamfall
 	else if sprite_index == spr_player_shotgun_shootdown
 		reset_anim_on_end(spr_player_shotgun_shootdown_loop)
 	
@@ -84,7 +84,7 @@ function player_groundpound()
 			xscale = -sign(slopeinst.image_xscale)
 			
 			state = states.tumble
-			sprite_index = spr_player_crouchslip
+			sprite_index = global.sprite_player_crouchslip
 			if freefallsmash > 20
 				movespeed = 12
 			else

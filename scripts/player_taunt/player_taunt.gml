@@ -5,11 +5,11 @@ function player_taunt()
 	
 	var endtaunt = false
 	
-	if !string_starts_with(sprite_get_name(sprite_index), "spr_player_supertaunt")
+	if !string_starts_with(sprite_get_name(sprite_index), "sprite_player_supertaunt")
 	{
 		if input_direction_check(INPUTS.up) && supertauntshow
 		{
-			reset_anim(asset_get_index($"spr_player_supertaunt{irandom_range(1, 4)}"))
+			reset_anim(asset_get_index($"sprite_player_supertaunt{irandom_range(1, 4)}"))
 			fmod_studio_event_instance_oneshot_3d("event:/sfx/player/supertaunt", x, y)
 			var spds = [[0, -1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]]
 			var i = 0

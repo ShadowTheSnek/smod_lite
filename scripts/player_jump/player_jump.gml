@@ -1,9 +1,9 @@
 function player_jump()
 {
-	var default_jump = spr_player_jump
-	var default_fall = spr_player_fall
-	var default_land = spr_player_land
-	var default_landmove = spr_player_landmove
+	var default_jump = global.sprite_player_jump
+	var default_fall = global.sprite_player_fall
+	var default_land = global.sprite_player_land
+	var default_landmove = global.sprite_player_landmove
 	
 	if has_shotgun
 	{
@@ -13,9 +13,9 @@ function player_jump()
 		default_landmove = spr_player_shotgun_land
 	}
 	
-	if sprite_index == spr_player_jump
+	if sprite_index == global.sprite_player_jump
 		sprite_index = default_jump
-	else if sprite_index == spr_player_fall
+	else if sprite_index == global.sprite_player_fall
 		sprite_index = default_fall
 	
 	if (coyote_time && input_buffers.jump > 0)
@@ -74,7 +74,7 @@ function player_jump()
 	{
 		fallingtimer = min(fallingtimer + 1, 100)
 		if fallingtimer >= 50
-			sprite_index = fallingtimer < 100 ? spr_player_fallface : spr_player_freefall
+			sprite_index = fallingtimer < 100 ? global.sprite_player_fallface : global.sprite_player_freefall
 	}
 	else
 		fallingtimer = 0
@@ -91,13 +91,13 @@ function player_jump()
 			{
 				state = states.mach2
 				movespeed = max(movespeed, 6);
-				reset_anim(spr_player_mach1)
+				reset_anim(global.sprite_player_mach1)
 			}
 		}
 		else
 		{
 			state = states.bump
-			reset_anim(spr_player_bodyslamland)
+			reset_anim(global.sprite_player_bodyslamland)
 			shake_camera()
 			fmod_studio_event_instance_oneshot_3d("event:/sfx/misc/slam", x, y)
 			create_effect(x, y + 2, spr_groundpoundeffect)
@@ -116,13 +116,13 @@ function player_jump()
 	image_speed = 0.35
 	switch (sprite_index)
 	{
-		case spr_player_jump:
+		case global.sprite_player_jump:
 		case spr_player_piledriverjump:
-			reset_anim_on_end(spr_player_fall)
+			reset_anim_on_end(global.sprite_player_fall)
 			break;
 		case spr_player_suplexcancel:
 			image_speed = 0.4
-			reset_anim_on_end(spr_player_fall)
+			reset_anim_on_end(global.sprite_player_fall)
 			break;
 		case spr_player_shotgun_jump:
 			reset_anim_on_end(spr_player_shotgun_fall)

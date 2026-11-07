@@ -2,7 +2,7 @@ function player_actor()
 {
 	switch (sprite_index)
 	{
-		case spr_player_walkfront:
+		case global.sprite_player_walkfront:
 			if anim_ended()
 				state = states.normal
 			if particle_timer > 0
@@ -14,7 +14,7 @@ function player_actor()
 			}
 			image_speed = 0.35
 			break;
-		case spr_player_timesup:
+		case global.sprite_player_timesup:
 			if anim_ended()
 			{
 				if room != rm_timesup
@@ -23,7 +23,7 @@ function player_actor()
 					image_speed = 0
 			}
 			break;
-		case spr_player_uppizzabox:
+		case global.sprite_player_uppizzabox:
 			vsp = 0
 			break;
 		case spr_player_shotgun_pickup: //generic animation end

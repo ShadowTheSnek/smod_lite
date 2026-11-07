@@ -163,7 +163,7 @@ function do_enemy_generics()
 			with obj_player
 			{
 				if state == states.mach3
-					reset_anim(spr_player_mach3hit)
+					reset_anim(global.sprite_player_mach3hit)
 				if !grounded && input_check(INPUTS.jump) && state != states.groundpound
 				{
 					input_buffers.jump = 0

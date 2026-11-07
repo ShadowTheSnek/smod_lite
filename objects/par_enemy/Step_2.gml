@@ -167,7 +167,7 @@ for (var i = 0; i < ds_list_size(en_list); i++) {
 
 ds_list_destroy(en_list)
 
-if string_starts_with(sprite_get_name(obj_player.sprite_index), "spr_player_supertaunt") && bbox_in_camera() && enemy_can_die()
+if string_starts_with(sprite_get_name(obj_player.sprite_index), "sprite_player_supertaunt") && bbox_in_camera() && enemy_can_die()
 {
 	if alarm[0] == -1
 		do_enemygibs()

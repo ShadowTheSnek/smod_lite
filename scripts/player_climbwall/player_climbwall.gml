@@ -13,7 +13,7 @@ function player_climbwall()
 			movespeed += 0.4
 	}
 	
-	sprite_index = wallspeed > 4 ? spr_player_climbwall : spr_player_clingwall
+	sprite_index = wallspeed > 4 ? global.sprite_player_climbwall : global.sprite_player_clingwall
 	image_speed = 0.6
 	
 	if !scr_hitwall(x + xscale, y)
@@ -31,7 +31,7 @@ function player_climbwall()
 		{
 			flash = 8
 			state = states.mach3
-			sprite_index = spr_player_mach3
+			sprite_index = global.sprite_player_mach3
 			movespeed = wallspeed
 		}
 		
@@ -50,7 +50,7 @@ function player_climbwall()
 	else if scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destroyable)
 	{
 		state = states.bump
-		reset_anim(spr_player_ceilinghit)
+		reset_anim(global.sprite_player_ceilinghit)
 		fmod_studio_event_instance_oneshot_3d("event:/sfx/misc/slam", x, y)
 	}
 	
@@ -59,7 +59,7 @@ function player_climbwall()
 	if (!input_check(INPUTS.dash) && grabclimbbuffer <= 0)
 	{
 		state = states.jump
-		sprite_index = spr_player_fall
+		sprite_index = global.sprite_player_fall
 		movespeed = 0
 		railmovespeed = 6;
         raildir = -xscale;
@@ -76,7 +76,7 @@ function player_climbwall()
 		vsp = -11
 		xscale *= -1
 		jumpstop = false
-		reset_anim(spr_player_walljumpstart)
+		reset_anim(global.sprite_player_walljumpstart)
 		fmod_studio_event_instance_oneshot_3d("event:/sfx/player/jump", x, y)
 	}
 	

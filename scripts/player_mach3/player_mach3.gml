@@ -13,17 +13,17 @@ function player_mach3()
 		input_buffers.jump = 0
 		vsp = -11
 		jumpstop = false
-		reset_anim(spr_player_mach3jump)
+		reset_anim(global.sprite_player_mach3jump)
 		fmod_studio_event_instance_oneshot_3d("event:/sfx/player/jump", x, y)
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
 	
 	if (mach4mode)
 	{
-		if (sprite_index != spr_player_crazyrun)
+		if (sprite_index != global.sprite_player_crazyrun)
 		{
 			flash = 8
-			sprite_index = spr_player_crazyrun
+			sprite_index = global.sprite_player_crazyrun
 		}
 		
 		if !particle_contains_sprite(spr_crazyruneffect)
@@ -44,25 +44,25 @@ function player_mach3()
 			create_effect(x, y, spr_flamecloud)
 		}
 	}
-	else if (sprite_index == spr_player_crazyrun)
+	else if (sprite_index == global.sprite_player_crazyrun)
 	{
 		flash = 8
-		sprite_index = spr_player_mach3
+		sprite_index = global.sprite_player_mach3
 	}
 	
 	if grounded
 	{
-		if (sprite_index == spr_player_Sjumpcancel)
-			sprite_index = spr_player_mach3
+		if (sprite_index == global.sprite_player_superjumpcancel)
+			sprite_index = global.sprite_player_mach3
 		if (!input_check(INPUTS.dash) && !dashpad)
 		{
-			reset_anim(spr_player_machslidestart)
+			reset_anim(global.sprite_player_machslidestart)
 			state = states.slide
 			fmod_studio_event_instance_oneshot_3d("event:/sfx/player/break", x, y)
 		}
 		if (P_MOVE != 0 && P_MOVE != xscale && !dashpad)
 		{
-			reset_anim(spr_player_machslideboost3)
+			reset_anim(global.sprite_player_machslideboost3)
 			state = states.slide
 			fmod_studio_event_instance_oneshot_3d("event:/sfx/player/machslideboost", x, y)
 		}
@@ -73,7 +73,7 @@ function player_mach3()
 		if (SJUMPHELD && !dashpad && vsp >= 0)
 		{
 			state = states.superjump
-			reset_anim(spr_player_superjumpprep)
+			reset_anim(global.sprite_player_superjumpprep)
 		}
 	}
 	else
@@ -92,10 +92,10 @@ function player_mach3()
 		state = states.tumble
 		
 		if grounded
-			reset_anim(spr_player_machroll)
+			reset_anim(global.sprite_player_machroll)
 		else
 		{
-			sprite_index = spr_player_mach2jump
+			sprite_index = global.sprite_player_mach2jump
 			vsp = 10
 		}
 		
@@ -121,7 +121,7 @@ function player_mach3()
 		vsp = -6
 		hsp = xscale * -6
 		shake_camera(20, 40 / room_speed)
-		reset_anim(spr_player_mach3hitwall)
+		reset_anim(global.sprite_player_mach3hitwall)
 		fmod_studio_event_instance_oneshot_3d("event:/sfx/misc/slam", x, y)
 		fmod_studio_event_instance_oneshot_3d("event:/sfx/misc/bump", x, y)
 		create_effect(x, y, spr_bumpeffect)
@@ -141,14 +141,14 @@ function player_mach3()
 	image_speed = 0.4
 	switch (sprite_index)
 	{
-		case spr_player_crazyrun:
+		case global.sprite_player_crazyrun:
 			image_speed = 0.75
 			break;
-		case spr_player_mach3jump:
-		case spr_player_rollgetup:
-		case spr_player_mach3hit:
+		case global.sprite_player_mach3jump:
+		case global.sprite_player_rollgetup:
+		case global.sprite_player_mach3hit:
 		case spr_player_dashpad:
-			reset_anim_on_end(spr_player_mach3)
+			reset_anim_on_end(global.sprite_player_mach3)
 			break;
 	}
 	

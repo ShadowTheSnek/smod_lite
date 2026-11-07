@@ -11,7 +11,7 @@ function player_grind()
 		vsp = -12
 		jumpstop = false
 		state = states.mach2
-		sprite_index = spr_player_mach2jump
+		sprite_index = global.sprite_player_mach2jump
 		movespeed = abs(hsp)
 		fmod_studio_event_instance_oneshot_3d("event:/sfx/player/jump", x, y)
 	}
@@ -19,7 +19,7 @@ function player_grind()
 	if (!place_meeting(x, y + 4, obj_grindrail) && !place_meeting(x, y + 4, obj_grindrailslope))
 	{
 		state = states.mach2
-		sprite_index = spr_player_mach2jump
+		sprite_index = global.sprite_player_mach2jump
 		movespeed = abs(hsp)
 	}
 }

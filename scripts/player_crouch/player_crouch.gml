@@ -1,10 +1,10 @@
 function player_crouch()
 {
-	var crouchspr = spr_player_crouch
-	var crouchdownspr = spr_player_crouchdown
-	var crouchjumpspr = spr_player_crouchjump
-	var crouchfallspr = spr_player_crouchfall
-	var crouchmovespr = spr_player_crawl
+	var crouchspr = global.sprite_player_crouch
+	var crouchdownspr = global.sprite_player_crouchdown
+	var crouchjumpspr = global.sprite_player_crouchjump
+	var crouchfallspr = global.sprite_player_crouchfall
+	var crouchmovespr = global.sprite_player_crawl
 	
 	if has_shotgun
 	{

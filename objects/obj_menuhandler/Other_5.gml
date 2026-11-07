@@ -1,7 +1,7 @@
 with obj_player
 {
 	state = states.actor
-	reset_anim(spr_player_walkfront)
+	reset_anim(global.sprite_player_walkfront)
 }
 
 ini_open(global.savestring)

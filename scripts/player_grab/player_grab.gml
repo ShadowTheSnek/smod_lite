@@ -17,7 +17,7 @@ function player_grab()
 		jumpstop = false
 		vsp = -11
 		state = states.mach2
-		reset_anim(spr_player_longjump)
+		reset_anim(global.sprite_player_longjump)
 		fmod_studio_event_instance_start(getup_snd)
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
@@ -27,7 +27,7 @@ function player_grab()
 		movespeed = 12
 		crouchslipbuffer = 25
 		state = states.tumble
-		sprite_index = spr_player_crouchslip
+		sprite_index = global.sprite_player_crouchslip
 		fmod_studio_event_instance_oneshot_3d("event:/sfx/player/crouchslip", x, y)
 		particle_create(x, y, particles.genericpoof, xscale, 1, spr_jumpdust)
 	}
@@ -40,7 +40,7 @@ function player_grab()
 		if input_check(INPUTS.dash)
 		{
 			state = states.mach2
-			sprite_index = spr_player_mach2
+			sprite_index = global.sprite_player_mach2
 		}
 		else
 			state = states.normal
@@ -79,7 +79,7 @@ function player_grab()
 	if anim_ended() && input_check(INPUTS.dash) && sprite_index == spr_player_suplexdash
 	{
 		state = states.mach2
-		sprite_index = spr_player_mach2
+		sprite_index = global.sprite_player_mach2
 	}
 	
 	if P_MOVE != 0 && P_MOVE != xscale

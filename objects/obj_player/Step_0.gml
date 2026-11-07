@@ -85,7 +85,7 @@ if (i_frames > 0 && state != states.hurt)
 }
 else if i_frames <= 0
 	image_alpha = 1
-var sjumpprep = (state == states.superjump && sprite_index != spr_player_superjump && sprite_index != spr_player_presentboxspring && sprite_index != spr_player_Sjumpcancelstart)
+var sjumpprep = (state == states.superjump && sprite_index != global.sprite_player_superjump && sprite_index != spr_player_presentboxspring && sprite_index != global.sprite_player_superjumpcancelstart)
 if (state == states.tumble || state == states.ball || state == states.crouch || sjumpprep)
 	mask_index = mask_player_small
 else
@@ -102,7 +102,7 @@ if (y > room_height + 300 || y < -800) && state != states.actor && state != stat
 	state = states.actor
 	hsp = 0
 	vsp = 0
-	sprite_index = spr_player_idle
+	sprite_index = global.sprite_player_idle
 }
 
 if intransfo || state == states.fireass
